@@ -1,7 +1,19 @@
 Hash table:
+Memory: Only stores existing components, but requires extra memory for buckets and pointers.
+Access: O(1) average, O(N) worst case. Not very cache-friendly.
+Maintenance: Easy to insert and remove entries, but may require rehashing.
 
 Map:
+Memory: Only stores existing components, but requires extra memory for tree nodes and pointers.
+Access: O(log N). Usually slower than a hash table and not very cache-friendly.
+Maintenance: Easy to insert and remove entries, but the tree must remain balanced.
 
 Sparse mapping 1:
+Memory: O(N*K), even when components are missing.
+Access: O(1). Cache-friendly when accessing different components of the same entity.
+Maintenance: Adding entities requires expanding the vector. Removing entities requires updating entries.
 
 Sparse mapping 2:
+Memory: O(N*K), even when components are missing.
+Access: O(1). Cache-friendly when accessing the same component type across multiple entities.
+Maintenance: Adding entities may require resizing all K vectors. Removing entities requires updating entries.
